@@ -6,7 +6,12 @@ class EmailAddressParser
   end
   
   def parse
-    @emails.split(", ").uniq
+    parsed_emails = @emails.split(", ")
+    if parsed_emails.include(" ")
+      parsed_emails.split(" ").uniq
+    else
+      parsed_emails.uniq
+    end
   end
   
 end
