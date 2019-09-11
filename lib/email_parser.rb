@@ -6,16 +6,22 @@ class EmailAddressParser
   end
   
   def parse
-    @emails
+    parsed_emails = []
     if @emails.include?(" ") && @emails.include?(",")
-      @emails.split(" ").split.(", ").uniq
+      @emails.split(", ").each do |string|
+        if string.include?(" ")
+          parsed_emails << string.split(" ")
+        else
+          parsed_emails << string
+        end
     elsif @emails.include?(" ")
-      @emails.split(" ").uniq
+      parsed_emails << @emails.split(" ")
     elsif @emails.include?(", ")
-      @emails.split(", ").uniq
+      parsed_emails << @emails.split(", ")
     else
-      @emails
+      parsed_emails << @emails
     end
+    parsed_emails.uniq
   end
   
 end
