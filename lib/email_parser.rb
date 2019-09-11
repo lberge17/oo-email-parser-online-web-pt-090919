@@ -6,11 +6,15 @@ class EmailAddressParser
   end
   
   def parse
-    parsed_emails = @emails.split(", ")
-    if parsed_emails.include?(" ")
-      parsed_emails.split(" ").uniq
+    @emails
+    if @emails.include?(" ") && @emails.include?(",")
+      @emails.split(" ").split.(", ")uniq
+    elsif @emails.include?(" ")
+      @emails.split(" ").uniq
+    elsif @emails.include?(", ")
+      @emails.split(", ").uniq
     else
-      parsed_emails.uniq
+      @emails
     end
   end
   
