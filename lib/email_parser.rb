@@ -14,6 +14,7 @@ class EmailAddressParser
         else
           parsed_emails << string
         end
+      end
     elsif @emails.include?(" ")
       parsed_emails << @emails.split(" ")
     elsif @emails.include?(", ")
