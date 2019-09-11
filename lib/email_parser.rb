@@ -22,7 +22,7 @@ class EmailAddressParser
     else
       parsed_emails << @emails
     end
-    parsed_emails.uniq
+    parsed_emails.flatten.uniq
   end
   
 end
