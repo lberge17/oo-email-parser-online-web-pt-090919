@@ -7,7 +7,7 @@ class EmailAddressParser
   
   def parse
     parsed_emails = @emails.split(", ")
-    if parsed_emails.include(" ")
+    if parsed_emails.include?(" ")
       parsed_emails.split(" ").uniq
     else
       parsed_emails.uniq
